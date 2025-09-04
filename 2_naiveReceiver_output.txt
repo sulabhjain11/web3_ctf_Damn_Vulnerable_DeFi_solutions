@@ -1,0 +1,32 @@
+┌──(kali㉿kali)-[~/…/DamnVulnerableDefi/damn-vulnerable-defi/test/naive-receiver]
+└─$ forge test --match-path NaiveReceiver.t.sol -vvv      
+[⠊] Compiling...
+No files changed, compilation skipped
+
+Ran 2 tests for test/naive-receiver/NaiveReceiver.t.sol:NaiveReceiverChallenge
+[PASS] test_assertInitialState() (gas: 34786)
+[PASS] test_naiveReceiver() (gas: 439360)
+Logs:
+  The address of weth:  0x8Ad159a275AEE56fb2334DBb69036E9c7baCEe9b
+  The address of deployer:  0xaE0bDc4eEAC5E950B67C6819B118761CaAF61946
+  The address of recovery:  0x73030B99950fB19C6A813465E58A0BcA5487FBEa
+  The address of player:  0x44E97aF4418b7a17AABD8090bEA0A471a366305C
+  The address of pool:  0xfF2Bd636B9Fc89645C2D336aeaDE2E4AbaFe1eA5
+  The address of receiver:  0x9c52B2C4A89E2BE37972d18dA937cbAd8AA8bd50
+  The total weth balance of deployer:  0
+  The total weth balance of recovery:  0
+  The total weth balance of deployer in the pool:  1000000000000000000000
+  The total weth balance of pool contract:  1000000000000000000000
+  The total weth balance of receiver:  10000000000000000000
+  Final fund of the attacker/player after the attack before transferring ether to recovery:  1010000000000000000000
+  Initial ether balance of the deployer:  0
+  Initial ether balance of the recovery:  0
+  Final ether balance of the recovery:  1010000000000000000000
+  Final ether balance of the deployer:  0
+  Final fund of the attacker/player after the transfer to the deployer:  0
+  Final total weth balance of pool contract:  0
+  Final total weth balance of receiver:  0
+
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 9.71ms (7.85ms CPU time)
+
+Ran 1 test suite in 22.85ms (9.71ms CPU time): 2 tests passed, 0 failed, 0 skipped (2 total tests)
