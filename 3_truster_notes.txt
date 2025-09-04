@@ -1,0 +1,12 @@
+3) LAB: 3_Truster
+Setup: Flash loan Lender pool contract
+
+vulnerability: 
+First of all, the lender contract does not implement any Flash loan standard (ERC3156). This increases the chance of vulnerability surface.
+actual vulnerability- The flash loan contract lends the tokens using .transfer() and then calls the .functionCall(data); or .call(data);. Finally the pool checks if its final balance is greater than or equal to the balance just before the flash loan is given out. == As a result, the attacker can make the pool contract to .approve() the attacker using the ".functionCall()". The attacker will call the flash loan function asking for 0 loan, approve itself as a spender, and will transfer the fund from the pool to the recover address.
+
+Exploiting:
+assertEq(vm.getNonce(player), 1, "Player executed more than one tx"); // this test is applied which makes sure that the player/attacker can sign only one transaction. As a result, the player/attacker make a call to the flash loan function to approve itself, and then extract the amount, since this will make up for 2 transactions which is not allowed. In order to bypass this, the player, can make another contract, which will be allowed to do multiple transactions. In this way, the player has only one transaction.
+
+Flow diagram:
+Founder test contract of the player -> deploys an Attacker Contract -> calls the lending contract -> lending pool calls the ERC20 token using .functionCall() and approves the attacker to spend on its behalf -> Attacker contract than transfers the fund from the pool to the recovery address.
