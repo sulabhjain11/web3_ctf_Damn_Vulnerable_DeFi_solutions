@@ -1,0 +1,20 @@
+┌──(kali㉿kali)-[~/…/DamnVulnerableDefi/damn-vulnerable-defi/test/truster]
+└─$ forge test --match-path Truster.t.sol -vvv
+[⠊] Compiling...
+[⠔] Compiling 1 files with Solc 0.8.25
+[⠒] Solc 0.8.25 finished in 1.39s
+Compiler run successful!
+
+Ran 2 tests for test/truster/Truster.t.sol:TrusterChallenge
+[PASS] test_assertInitialState() (gas: 21982)
+[PASS] test_truster() (gas: 120510)
+Logs:
+  Initial DVT tokens of the deployer:  115792089237316195423570985008687907853269984665640563039457584007913129639935
+  Initial DVT tokens of the player:  0
+  Initial DVT tokens of the lending pool:  1000000000000000000000000
+  Final DVT token of the lending pool:  0
+  Final DVT token of the recovery account:  1000000000000000000000000
+
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 1.39ms (557.58µs CPU time)
+
+Ran 1 test suite in 10.88ms (1.39ms CPU time): 2 tests passed, 0 failed, 0 skipped (2 total tests)
