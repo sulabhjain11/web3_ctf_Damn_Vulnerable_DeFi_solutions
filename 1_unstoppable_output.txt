@@ -1,0 +1,25 @@
+┌──(kali㉿kali)-[~/…/DamnVulnerableDefi/damn-vulnerable-defi/test/unstoppable]
+└─$ forge test --match-path Unstoppable.t.sol -vvv  
+[⠊] Compiling...
+No files changed, compilation skipped
+
+Ran 2 tests for test/unstoppable/Unstoppable.t.sol:UnstoppableChallenge
+[PASS] test_assertInitialState() (gas: 57303)
+[PASS] test_unstoppable() (gas: 85878)
+Logs:
+  Address of this test contract:  0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496
+  Address of asset token:  0x8Ad159a275AEE56fb2334DBb69036E9c7baCEe9b
+  Address of the vault:  0x1240FA2A84dd9157a0e76B5Cfe98B1d52268B264
+  Address of the deployer of the vault:  0xaE0bDc4eEAC5E950B67C6819B118761CaAF61946
+  Vault Owner:  0xfF2Bd636B9Fc89645C2D336aeaDE2E4AbaFe1eA5
+  Monitor contract address:  0xfF2Bd636B9Fc89645C2D336aeaDE2E4AbaFe1eA5
+  Underlying assest value of vault:  1000000000000000000000000
+  Total shares minted by the vault:  1000000000000000000000000
+  Asset token value of the player (outside the vault):  10000000000000000000
+  Underlying assest value of vault after direct transfer:  1000000000000000000000001
+  Total shares minted by the vault after direct transfer:  1000000000000000000000000
+  Asset token value of the player (outside the vault) after transfer:  9999999999999999999
+
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 2.90ms (1.45ms CPU time)
+
+Ran 1 test suite in 19.05ms (2.90ms CPU time): 2 tests passed, 0 failed, 0 skipped (2 total tests)
