@@ -1,0 +1,5 @@
+2) LAB: naive-receiver
+Setup: EIP-712 for meta-transaction, Basic Forwarder for meta-transaction, Flash Loan contract(ERC3156), Multicall functionality  
+
+vulnerability-1: the flashloanreceiver(borrower) checks that the call is made from the lending pool, but does not check who actually initiated the transaction. As a result, an attacker can initiate a flash loan from the lender on behalf of the receiver. As a result, the receiver will have to pay the fee and the attacker will have the loan. ===== ACCESS CONTROL VULNERABILITY
+vulnerability-2: meta-transaction forwarder implementation in the lender contract allows anyone to impersonate any other address through address appending in calldata.
