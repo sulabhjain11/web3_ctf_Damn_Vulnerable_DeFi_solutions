@@ -1,0 +1,9 @@
+1) LAB: 1_Unstoppable
+Setup: Vault contract(ERC4626) + flashloan contract(ERC3156) feature in the vault contract
+
+We are basically testing if we can always enter into the revert condition by exploiting a vulnerability.
+Vulnerability:
+	-> totalAssets() in a vault contract must be proportional to totalSupply. It is meant to be that asset value that actually converts to a share, meaning that it is that asset amount that is deposited though either deposit() and mint() functions as they convert assets to shares.
+	-> The vulnerability is that totalAssets() reads value from .balanceOf() and not from a variable managed locally. As a result, an user can deposit the asset to the vault directly without using the deposit() and mint() function, and thus the value of totalAssets() will change without any change in the totalSupply therefore leading to inconsistency.
+	-> The vault contract also adds a new feaure that gives a flash loan to borrowers and uses the following line. We can use the above vulnerability to prevent this contract from giving any flashloans: 
+	         if (convertToShares(totalSupply) != balanceBefore) revert InvalidBalance();
