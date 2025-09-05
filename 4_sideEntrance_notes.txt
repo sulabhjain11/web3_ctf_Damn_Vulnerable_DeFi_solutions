@@ -1,0 +1,5 @@
+4) LAB: 4_sideEntrance
+Setup: Flashloan(no standards used) + use of ether in the pool and no use of any other token + external call from the pool using interface
+
+Vulnerability: The final and initial balance of the contract is checked as it deals with plain ether and no other tokens. The vulnerability is that it checks if the after balance is greater than or equal to the initial balance of the pool. This logic may seem correct, but the vulnerability arise when the external called function can take a flash loan, pass the flash loan to some other address in the loan contract that belongs to the attacker. This way, the final balance will always be greater than or equal to the initial balance of the pool contract. Impact: The ether is transferred to the address of the attacker will still in the pool. The attacker can transfer itself the ether later from the pool.
+Inshort: The contract allows the borrower of the loan to repay the flashloan to the contract via the deposit() function.
