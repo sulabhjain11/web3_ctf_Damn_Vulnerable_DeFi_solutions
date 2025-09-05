@@ -1,0 +1,27 @@
+┌──(kali㉿kali)-[~/…/DamnVulnerableDefi/damn-vulnerable-defi/test/side-entrance]
+└─$ forge test --match-path SideEntrance.t.sol -vvv
+[⠊] Compiling...
+[⠢] Compiling 1 files with Solc 0.8.25
+[⠆] Solc 0.8.25 finished in 1.06s
+Compiler run successful!
+
+Ran 2 tests for test/side-entrance/SideEntrance.t.sol:SideEntranceChallenge
+[PASS] test_assertInitialState() (gas: 12972)
+[PASS] test_sideEntrance() (gas: 391690)
+Logs:
+  Initial ether of the player:  1000000000000000000
+  Initial ether of the deployer:  340282366920938462463374607431768211456
+  Initial ether of the pool:  1000000000000000000000
+  Initial ether of the deployer in the pool:  1000000000000000000000
+  Initial ether of the recovery:  0
+  Initial ether of the player in the pool:  0
+  Final-1 ether of the player in the pool:  1000000000000000000
+  Balance of the AttackerContract contract in the pool after the full attack 0
+  Balance of ether of the deployer in the pool after the full attack:  1000000000000000000000
+  Balance of ether of the player in the pool after the full attack:  0
+  Balance of ether in the pool after the full attack:  0
+  Balance of ether in the recovery account 1000000000000000000000
+
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 3.99ms (2.00ms CPU time)
+
+Ran 1 test suite in 22.76ms (3.99ms CPU time): 2 tests passed, 0 failed, 0 skipped (2 total tests)
