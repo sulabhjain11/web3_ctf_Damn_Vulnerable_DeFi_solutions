@@ -1,0 +1,6 @@
+5) LAB: 5_theRewarder
+Setup: Merkel tree for whitelisting + merkel proof + bitmapping for storing bits instead of the whole slot + Prize distribution contract + multiple transactions in 1 request.
+
+Vulnerability: The vulnerable contracts takes in a list of claims from an user for each token dvt and weth. As a result, an user can send many arrays with amounts to claim each token by small amounts. The problem is that the contract, updates the bit of the user after that user has finished withdrawing the amount. As a result, the user can withdraw all the amount and then the bit will be updated. Inshort, the user can withdraw all the token based on its maximum allotted balance, thereby satisfying the merkel tree and do it recursively thereby emptying the distribution.
+
+Mitigation: before every transfer, make sure that the user has not reached their amount limit. update the bit as soon as they have reached the amount limit.
