@@ -1,0 +1,31 @@
+┌──(kali㉿kali)-[~/…/DamnVulnerableDefi/damn-vulnerable-defi/test/the-rewarder]
+└─$ forge test --match-path TheRewarder.t.sol -vv
+[⠊] Compiling...
+[⠆] Compiling 1 files with Solc 0.8.25
+[⠰] Solc 0.8.25 finished in 2.17s
+Compiler run successful!
+
+Ran 2 tests for test/the-rewarder/TheRewarder.t.sol:TheRewarderChallenge
+[PASS] test_assertInitialState() (gas: 61693)
+[PASS] test_theRewarder() (gas: 1005560434)
+Logs:
+  Total DVT tokens present in the TheRewarderDistributor contract after Alice's claim:  9997497975612005191
+  Total WETH tokens present in the TheRewarderDistributor contract after Alice's claim:  999771617011871775
+  Address of the player:  0x44E97aF4418b7a17AABD8090bEA0A471a366305C
+  Address of the recovery:  0x73030B99950fB19C6A813465E58A0BcA5487FBEa
+  Balance of DVT tokens in the player 0
+  Balance of WETH tokens in the player 0
+  The remaining balance in DVT token:  9997497975612005191
+  The next batch number in DVT token:  1
+  The remaining balance in WETH token:  999771617011871775
+  The next batch number in WETH token:  1
+  Balance of DVT tokens in the player 9991970238730241694
+  Balance of WETH tokens in the player 998938703105422020
+  Balance of DVT tokens in the player 0
+  Balance of WETH tokens in the player 0
+  Balance of DVT tokens in the recovery 9991970238730241694
+  Balance of WETH tokens in the recovery 998938703105422020
+
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 6.19s (6.15s CPU time)
+
+Ran 1 test suite in 6.19s (6.19s CPU time): 2 tests passed, 0 failed, 0 skipped (2 total tests)
